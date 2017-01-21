@@ -4,7 +4,7 @@ function slice (node) {
     : new Array(node);
 }
 
-var methods = {
+let methods = {
   addClass (name) {
     this.forEach(el => el.classList.add(name));
   },
@@ -68,13 +68,18 @@ function wrap (el) {
   return decorate(wrapper);
 }
 
-module.exports = function (query) {
-  if(query[0] === '#') {
-       return wrap(document.getElementById(query.substring(1)));
-  }
-  if (query instanceof HTMLElement) {
-    return wrap(query);
-  }
-  return wrap(document.querySelectorAll(query));
+let dommer = function (query) {
+  const el =  query[0] === '#'
+    ? document.getElementById(query.substring(1))
+    : (query instanceof HTMLElement || query === document)
+    ? query
+    : document.querySelectorAll(query);
+
+  return wrap(el);
 }
 
+dommer.fn = (func) => {
+  methods[func.name] = func;
+};
+
+module.exports = dommer;
