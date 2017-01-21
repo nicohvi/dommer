@@ -1,12 +1,13 @@
 {
   "name": "dommer",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Dead simply DOM operations",
   "main": "lib/index.js",
   "author": "Nicolay Hvidsten",
   "license": "MIT",
   "scripts": {
-    "build": "./node_modules/.bin/babel -d lib src/"
+    "build": "./node_modules/.bin/babel -d lib src/",
+    "prepublish": "npm run build"
   },
   "devDependencies": {
     "babel-cli": "^6.22.2",
