@@ -3,13 +3,10 @@
 Super simple DOM operations. The API is listed below, and
 works exactly like in [jQuery](https://github.com/jquery/jquery).
 
-```
+```javascript
 const $ = import 'dommer';
-
 const item = $('.item');
-
 ```
-
 
 ## API
 * addClass
