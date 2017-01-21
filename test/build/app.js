@@ -66,17 +66,24 @@ function wrap(el) {
   return decorate(wrapper);
 }
 
+<<<<<<< HEAD
 var dommer = function dommer(query) {
+=======
+module.exports = function (query) {
+>>>>>>> 8491e1abfd2d67c3c9879485190453bbb01b0cc7
   var el = query[0] === '#' ? document.getElementById(query.substring(1)) : query instanceof HTMLElement || query === document ? query : document.querySelectorAll(query);
 
   return wrap(el);
 };
+<<<<<<< HEAD
 
 dommer.fn = function (func) {
   methods[func.name] = func;
 };
 
 module.exports = dommer;
+=======
+>>>>>>> 8491e1abfd2d67c3c9879485190453bbb01b0cc7
 },{}],2:[function(require,module,exports){
 'use strict';
 
@@ -91,6 +98,7 @@ var items = (0, _lib2.default)('.items .item');
 console.log(items.length);
 
 (0, _lib2.default)(document).find('body').addClass('body');
+<<<<<<< HEAD
 
 // Extension testing
 
@@ -101,4 +109,6 @@ function useless() {
 _lib2.default.fn(useless);
 
 (0, _lib2.default)(document).useless();
+=======
+>>>>>>> 8491e1abfd2d67c3c9879485190453bbb01b0cc7
 },{"../lib":1}]},{},[2])
