@@ -10,11 +10,11 @@ const item = $('.item');
 
 ## API
 * addClass
-* item.data
-* item.find
-* item.hasClass
-* item.on
-* item.offset
-* item.removeClass
-* item.toggleClass
-* item.width
+* data
+* find
+* hasClass
+* on
+* offset
+* removeClass
+* toggleClass
+* width
