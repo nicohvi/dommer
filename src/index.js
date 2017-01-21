@@ -69,12 +69,12 @@ function wrap (el) {
 }
 
 module.exports = function (query) {
-  if(query[0] === '#') {
-       return wrap(document.getElementById(query.substring(1)));
-  }
-  if (query instanceof HTMLElement) {
-    return wrap(query);
-  }
-  return wrap(document.querySelectorAll(query));
+  const el =  query[0] === '#'
+              ? document.getElementById(query.substring(1))
+              : (query instanceof HTMLElement || query === document)
+              ? query
+              : document.querySelectorAll(query);
+
+  return wrap(el);
 }
 

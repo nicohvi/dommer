@@ -1,6 +1,6 @@
 {
   "name": "dommer",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Dead simply DOM operations",
   "main": "lib/index.js",
   "author": "Nicolay Hvidsten",
@@ -12,10 +12,14 @@
   "readme": "README.md",
   "scripts": {
     "build": "./node_modules/.bin/babel -d lib src/",
-    "prepublish": "npm run build"
+    "prepublish": "npm run build",
+    "test-setup": "gulp --gulpfile test/gulpfile.js"
   },
   "devDependencies": {
     "babel-cli": "^6.22.2",
-    "babel-preset-es2015": "^6.22.0"
+    "babel-preset-es2015": "^6.22.0",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^6.1.2",
+    "gulp-browserify": "^0.5.1"
   }
 }
