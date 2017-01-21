@@ -5,6 +5,11 @@
   "main": "lib/index.js",
   "author": "Nicolay Hvidsten",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nicohvi/dommer"
+  },
+  "readme": "README.md",
   "scripts": {
     "build": "./node_modules/.bin/babel -d lib src/",
     "prepublish": "npm run build"
