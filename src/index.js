@@ -9,6 +9,10 @@ let methods = {
     this.forEach(el => el.classList.add(name));
   },
 
+  append (nodes) {
+    this[0].append(nodes);
+  },
+
   data (selector) {
     return this[0].dataset[selector];
   },
@@ -36,6 +40,10 @@ let methods = {
 
   removeClass (name) {
     this[0].classList.remove(name);
+  },
+
+  val () {
+    return this[0].value;
   },
 
   toggleClass (name) {
