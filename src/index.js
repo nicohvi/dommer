@@ -14,7 +14,7 @@ let methods = {
   },
 
   attr (key, val = null) {
-    val 
+    val === null
       ? this[0].setAttribute(key, val) 
       : this[0].getAttribute(key);
   },
