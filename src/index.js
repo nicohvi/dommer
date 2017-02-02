@@ -23,12 +23,12 @@ let methods = {
 
   data (key, val = null) {
     if(val === null) {
-      let result = this[0].dataset(key);
+      let result = this[0].dataset[key];
       return result === "false" 
-      ? false
-      : result === "true"
-      ? true
-      : result
+        ? false
+        : result === "true"
+        ? true
+        : result
     }
     this[0].dataset[key] = val;
   },
