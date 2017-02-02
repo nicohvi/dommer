@@ -13,6 +13,12 @@ let methods = {
     this[0].append(nodes);
   },
 
+  attr (key, val = null) {
+    val 
+      ? this[0].setAttribute(key, val) 
+      : this[0].getAttribute(key);
+  },
+
   data (selector) {
     return this[0].dataset[selector];
   },
