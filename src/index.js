@@ -47,7 +47,9 @@ let methods = {
   },
 
   toggleClass (name, flag = null) {
-    flag ? this[0].classList.toggle(name, flag) : this[0].classList.toggle(name);
+    flag === null 
+      ? this[0].classList.toggle(name);
+      : this[0].classList.toggle(name, flag);
   },
 
   width () {
