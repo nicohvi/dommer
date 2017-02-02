@@ -14,9 +14,11 @@ let methods = {
   },
 
   attr (key, val = null) {
-    val === null
-      ? this[0].setAttribute(key, val) 
-      : this[0].getAttribute(key);
+    if(val === null) return this[0].getAttribute(key);
+    
+    val
+      ? this[0].setAttribute(key, val)
+      : this[0].removeAttribute(key);
   },
 
   data (selector) {
