@@ -21,8 +21,16 @@ let methods = {
       : this[0].removeAttribute(key);
   },
 
-  data (selector) {
-    return this[0].dataset[selector];
+  data (key, val = null) {
+    if(val === null) {
+      let result = this[0].dataset(key);
+      return result === "false" 
+      ? false
+      : result === "true"
+      ? true
+      : result
+    }
+    this[0].dataset[key] = val;
   },
 
   find (selector) {
