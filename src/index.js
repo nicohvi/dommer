@@ -68,8 +68,9 @@ let methods = {
       : this[0].classList.toggle(name, flag);
   },
 
-  trigger (name) {
-    this[0].dispatchEvent(name);
+  trigger (name, opts = { "bubbles": true, "cancelable": false }) {
+    const event = new Event(name, opts); 
+    this.forEach(node => node.dispatchEvent(event));
   },
 
   width () {
