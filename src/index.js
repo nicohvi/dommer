@@ -68,6 +68,10 @@ let methods = {
       : this[0].classList.toggle(name, flag);
   },
 
+  trigger (name) {
+    this[0].dispatchEvent(name);
+  },
+
   width () {
     return this[0].clientWidth;
   }
