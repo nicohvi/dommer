@@ -54,6 +54,25 @@ let methods = {
     };
   },
 
+  parent (selector) {
+    let parentNode = null;
+    let curr = this[0];
+
+    selector = selector.indexOf('.') > -1 ? selector.slice(1) : selector;
+
+    while(true) {
+      parentNode = curr.parentNode;
+      if(!parentNode 
+        || parentNode.tagName.toLowerCase() === 'html') throw Error("No parent node");
+      if(parentNode.classList.contains(selector) 
+        || parentNode.tagName.toLowerCase() === selector )
+        { 
+          return wrap(parentNode); 
+      }
+      curr = parentNode
+    }
+  },
+
   removeClass (name) {
     this[0].classList.remove(name);
   },
