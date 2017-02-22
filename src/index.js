@@ -119,9 +119,8 @@ function wrap (el) {
 }
 
 let dommer = function (query) {
-  const el =  query[0] === '#'
-    ? document.getElementById(query.substring(1))
-    : (query instanceof HTMLElement || query === document)
+  const el = 
+    (query instanceof HTMLElement || query === document)
     ? query
     : document.querySelectorAll(query);
 
